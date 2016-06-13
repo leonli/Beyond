@@ -11,7 +11,7 @@ resource "aws_route53_record" "ci_route" {
 }
 
 resource "aws_instance" "ci_server" {
-    ami = "ami-0c31cb6c"
+    ami = "ami-3302f853"
     instance_type = "m4.large"
     key_name = "leon's keypair"
     tags {
