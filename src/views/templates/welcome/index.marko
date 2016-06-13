@@ -1,0 +1,64 @@
+<lasso-page name="hello" package-path="./browser.json"/>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <lasso-head/>
+</head>
+<body>
+    <div class="container">
+      <div class="page-header">
+        <h1>User Form</h1>
+      </div>
+      <form action="/user/add" method="post" class="jumbotron">
+        <div class="form-group">
+          <label for="exampleInputEmail1">User Name</label>
+          <input type="text" class="form-control" name="user_name" placeholder="User Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="text" class="form-control" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Phone Number</label>
+          <input type="text" class="form-control" name="phone_number" placeholder="Phone Number">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+      <div class="page-header">
+        <h1>User List</h1>
+      </div>
+      <async-fragment data-provider="${data.userList}" client-reorder="true" var="users">
+        <table class="table table-bordered table-hover jumbotron">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>username</th>
+              <th>password</th>
+              <th>phone number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <for(user in users)>
+              <tr>
+                <td>${user.id}</td>
+                <td>${user.user_name}</td>
+                <td>${user.password}</td>
+                <td>${user.phone_number}</td>
+              </tr>
+            </for>
+          </tbody>
+        </table>
+      </async-fragment>
+    </div>
+
+
+    <lasso-body/>
+
+    <browser-refresh enabled="false" />
+    <async-fragments/>
+
+</body>
+</html>
