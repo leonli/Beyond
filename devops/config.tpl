@@ -2,12 +2,12 @@ var config = {
 
     production: {
       database: {
-          dbname: 'beyond_db',
-          username: 'devuser',
-          password: 'LocalDev123',
+          dbname: '${db_name}',
+          username: '${db_username}',
+          password: '${db_password}',
           connection: {
               dialect: "mysql",
-              host: 'localhost',
+              host: '${rds_address}',
               port: 3306,
               logging: false
           }
@@ -18,8 +18,8 @@ var config = {
     development: {
         database: {
           dbname: 'beyond_db',
-          username: 'devuser',
-          password: 'LocalDev123',
+          username: 'beyond',
+          password: 'LocalDev',
           connection: {
               dialect: "mysql",
               host: 'localhost',
@@ -32,8 +32,8 @@ var config = {
     test: {
         database: {
           dbname: 'beyond_db',
-          username: '',
-          password: '',
+          username: 'beyond',
+          password: 'LocalDev',
           connection: {
               dialect: "mysql",
               host: 'localhost',

@@ -50,7 +50,6 @@ app.use(router.routes());
 
 // Apply serving static resources
 app.use(serve('./static'));
-app.use(serve('./public'));
 
 // we will export the koa app for test cases
 module.exports = exports = app.listen(__PORT__ || 3000);
@@ -61,4 +60,5 @@ if (__ENV_MODE__ !== 'production') {
   }
 }
 
+console.info(`The ENV_MODE is ${__ENV_MODE__}`);
 console.info(`==> Server now is listening on port ${__PORT__}`);
