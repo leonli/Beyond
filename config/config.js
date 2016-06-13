@@ -1,13 +1,13 @@
-var config = {
+ var config = {
 
     production: {
       database: {
           dbname: 'beyond_db',
-          username: 'devuser',
-          password: 'LocalDev123',
+          username: 'dbadmin',
+          password: 'Rdbms1234',
           connection: {
               dialect: "mysql",
-              host: 'localhost',
+              host: 'beyond-db.cqjutmbqwnuk.us-west-2.rds.amazonaws.com',
               port: 3306,
               logging: false
           }
@@ -18,8 +18,8 @@ var config = {
     development: {
         database: {
           dbname: 'beyond_db',
-          username: 'devuser',
-          password: 'LocalDev123',
+          username: 'beyond',
+          password: 'LocalDev',
           connection: {
               dialect: "mysql",
               host: 'localhost',
@@ -32,8 +32,8 @@ var config = {
     test: {
         database: {
           dbname: 'beyond_db',
-          username: '',
-          password: '',
+          username: 'beyond',
+          password: 'LocalDev',
           connection: {
               dialect: "mysql",
               host: 'localhost',
@@ -46,19 +46,20 @@ var config = {
     env: function () {
       switch (__ENV_MODE__) {
         case 'development':
-          global.$config = this.development;
+          global. = this.development;
           break;
         case 'test':
-          global.$config = this.test;
+          global. = this.test;
           break;
         case 'production':
-          global.$config = this.production;
+          global. = this.production;
           break;
         default:
-          global.$config = this.development;
+          global. = this.development;
       }
-      return global.$config;
+      return global.;
     }
 };
 
 module.exports = config.env();
+ 
