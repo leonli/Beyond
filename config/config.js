@@ -44,20 +44,21 @@
     },
 
     env: function () {
+      var conf = {};
       switch (__ENV_MODE__) {
         case 'development':
-          global. = this.development;
+          conf = this.development;
           break;
         case 'test':
-          global. = this.test;
+          conf = this.test;
           break;
         case 'production':
-          global. = this.production;
+          conf = this.production;
           break;
         default:
-          global. = this.development;
+          conf = this.development;
       }
-      return global.;
+      return conf;
     }
 };
 

@@ -44,20 +44,21 @@ var config = {
     },
 
     env: function () {
+      var conf = {};
       switch (__ENV_MODE__) {
         case 'development':
-          global.$config = this.development;
+          conf = this.development;
           break;
         case 'test':
-          global.$config = this.test;
+          conf = this.test;
           break;
         case 'production':
-          global.$config = this.production;
+          conf = this.production;
           break;
         default:
-          global.$config = this.development;
+          conf = this.development;
       }
-      return global.$config;
+      return conf;
     }
 };
 
