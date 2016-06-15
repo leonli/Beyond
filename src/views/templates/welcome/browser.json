@@ -2,6 +2,7 @@
     "dependencies": [
         "../../styles/bootstrap/bootstrap.less",
         "../../styles/fontawesome/font-awesome.less",
+        "../../styles/welcome.less",
         "require-run: jquery",
         "require: ../../js/bootstrap.js"
     ]
