@@ -1,10 +1,10 @@
- {
+{
     "plugins": [
         "lasso-less"
     ],
-    "outputDir": "static/client",
+    "outputDir": "static${prefix}",
     "fingerprintsEnabled": true,
-    "urlPrefix": "//static-beyond.awsrun.com/client",
+    "urlPrefix": "//${static_domain}${prefix}",
     "minify": true,
     "resolveCssUrls": true,
     "bundlingEnabled": true,
@@ -18,4 +18,3 @@
         }
     ]
 }
- 

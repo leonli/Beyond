@@ -12,3 +12,15 @@ resource "template_file" "config_file" {
       command = "(cat <<EOF\n ${self.rendered} \nEOF\n) > ../config/config.js"
   }
 }
+
+resource "template_file" "config_file_static" {
+  template = "${file("config_static.tpl")}"
+  vars {
+    static_domain = "${var.beyond_domain_cdn}"
+    prefix = "${var.cdn_path}"
+  }
+  
+  provisioner "local-exec" {
+      command = "(cat <<EOF\n ${self.rendered} \nEOF\n) > ../config/lasso-config.json"
+  }
+}

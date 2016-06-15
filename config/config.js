@@ -18,8 +18,8 @@
     development: {
         database: {
           dbname: 'beyond_db',
-          username: 'beyond',
-          password: 'LocalDev',
+          username: 'devuser',
+          password: 'LocalDev123',
           connection: {
               dialect: "mysql",
               host: 'localhost',
@@ -32,8 +32,8 @@
     test: {
         database: {
           dbname: 'beyond_db',
-          username: 'beyond',
-          password: 'LocalDev',
+          username: '',
+          password: '',
           connection: {
               dialect: "mysql",
               host: 'localhost',

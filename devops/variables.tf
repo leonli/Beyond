@@ -68,6 +68,15 @@ variable "beyond_domain" {
   default     = "beyond.awsrun.com"
 }
 
+variable "beyond_domain_cdn" {
+  description = "The domain of the beyond CDN when running on production"
+  default = "static-beyond.awsrun.com"
+}
+
+variable "cdn_path" {
+  default = "/client"
+}
+
 variable "identifier" {
   default     = "beyond-db"
   description = "Identifier for your DB"
