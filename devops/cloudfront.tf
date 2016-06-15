@@ -10,7 +10,6 @@ resource "aws_cloudfront_distribution" "beyond_cdn" {
       origin_ssl_protocols   = ["TLSv1.2", "TLSv1.1", "TLSv1"]
     }
 
-    origin_path = "${var.cdn_path}"
   }
 
   enabled             = true
@@ -32,7 +31,7 @@ resource "aws_cloudfront_distribution" "beyond_cdn" {
     }
 
     viewer_protocol_policy = "allow-all"
-    min_ttl                = 0
+    min_ttl                = 36000
     default_ttl            = 36000
     max_ttl                = 86400
   }
