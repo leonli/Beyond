@@ -25,7 +25,7 @@ resource "aws_security_group" "beyond_elb_sg" {
 resource "aws_security_group" "beyond_instances_sg" {
   name        = "beyond_instances_sg"
   description = "The security gourp defined for the beyond running instances"
-  vpc_id = "${aws_vpc.apps.id}"
+  vpc_id = "${aws_vpc.apps.id}" 
 
   # SSH access from anywhere
   ingress {

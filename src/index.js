@@ -49,7 +49,7 @@ app.use(convert(bodyParser()));
 app.use(router.routes());
 
 // Apply serving static resources
-app.use(serve('./static'));
+app.use(serve('./static', {maxage: 365 * 24 * 60 * 60}));
 
 // we will export the koa app for test cases
 module.exports = exports = app.listen(__PORT__ || 3000);
