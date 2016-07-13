@@ -32,8 +32,8 @@
     test: {
         database: {
           dbname: 'beyond_db',
-          username: 'devuser',
-          password: 'LocalDev123',
+          username: '',
+          password: '',
           connection: {
               dialect: "mysql",
               host: 'localhost',
